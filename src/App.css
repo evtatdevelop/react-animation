@@ -21,14 +21,27 @@
   /* animation-duration: .5s;
   animation-name: toggle;
   animation-timing-function: ease-in-out; */
-  animation: toggle 750ms ease-in-out forwards
+
+  /* animation: toggle 750ms ease-in-out forwards */
 }
 
+
+/* BLUE */
 .square.blue{
   background-color: skyblue;
 }
-.square.orange {
-  background-color: lightsalmon
+
+.square.entering {
+  animation: toggle 750ms ease-in-out forwards
+}
+
+.square.exiting {
+  animation: toggle 550ms ease-in-out alternate-reverse
+}
+
+.square.exited {
+  opacity: 0;
+  transform: translateY(-100px);
 }
 
 @keyframes toggle {
@@ -43,4 +56,32 @@
     opacity: 1;
     transform: translateY(25px);
   }
+}
+
+
+
+/* ORANGE */
+.square.orange {
+  background-color: lightsalmon
+}
+
+.os-enter {
+  opacity: 0;
+}
+.os-enter-active {
+  opacity: 1;
+  transition: opacity 750ms;
+}
+.os-enter-done {
+  opacity: 1;
+}
+.os-exit {
+  opacity: 1;
+}
+.os-exit-active {
+  opacity: 0; 
+  transition: opacity 500ms;
+}
+.os-exit-done {
+  opacity: 0;
 }
